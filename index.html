@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Get File Path Document</title>
+</head>
+
+<body>
+    <input type="file" id="importFile" multiple webkitdirectory />
+    <button onclick="upload()">upload</button>
+
+    <p><strong>filenames:</strong></p>
+    <div id="filename">
+    </div>
+</body>
+
+<script>
+    function upload() {
+        var filename = document.getElementById("importFile").files;
+        // 这时的filename不是 importFile 框中的值
+        console.log(filename);
+        var file = document.getElementById("filename");
+        for (var i = 0; i < filename.length; i++) {
+            file.innerText += filename[i].name;
+            file.innerText += "\n";
+        }
+    }</script>
+
+</html>
